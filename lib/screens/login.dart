@@ -26,44 +26,46 @@ class Login extends StatelessWidget {
                   ),
                 ),
               ),
-              child: Stack(
-                children: [
-                  Positioned(
-                    bottom: 50,
-                    left: 25,
-                    height: 200.0,
-                    width: 200.0,
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image:
-                              AssetImage("assets/images/backgroundhuman.png"),
+              child: Expanded(
+                child: Stack(
+                  children: [
+                    Positioned(
+                      bottom: 50,
+                      left: 25,
+                      height: 200.0,
+                      width: 200.0,
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image:
+                                AssetImage("assets/images/backgroundhuman.png"),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Positioned(
-                    bottom: 170,
-                    left: 25,
-                    height: 200.0,
-                    width: 200.0,
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image:
-                              AssetImage("assets/images/backgroundstars.png"),
+                    Positioned(
+                      bottom: 170,
+                      left: 25,
+                      height: 200.0,
+                      width: 200.0,
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image:
+                                AssetImage("assets/images/backgroundstars.png"),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Positioned(
-                    top: 24,
-                    left: 25,
-                    child: Text(
-                      "Login with your phone".toUpperCase(),
+                    Positioned(
+                      top: 24,
+                      left: 25,
+                      child: Text(
+                        "Login with your phone".toUpperCase(),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             MyCard(),
