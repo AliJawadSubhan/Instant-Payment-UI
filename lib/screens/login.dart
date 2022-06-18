@@ -8,10 +8,10 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return SingleChildScrollView(
-      child: Scaffold(
-        backgroundColor: kbackgroundColor,
-        body: Column(
+    return Scaffold(
+      backgroundColor: kbackgroundColor,
+      body: SingleChildScrollView(
+        child: Column(
           children: [
             Container(
               height: size.height * 0.7,
@@ -61,14 +61,14 @@ class Login extends StatelessWidget {
                       top: 24,
                       left: 25,
                       child: Text(
-                        "Login with your phone".toUpperCase(),
+                        "Login with your\n Mobile Phone\n number".toUpperCase(),
+                        style: TextStyle(color: Colors.white, fontSize: 32),
                       ),
                     ),
                   ],
                 ),
               ),
             ),
-            MyCard(),
             MyCard(),
             Container(
               child: Text(

@@ -2,12 +2,14 @@ import 'package:assignment_ui/constant.dart';
 import 'package:flutter/material.dart';
 
 class MyCard extends StatelessWidget {
+  const MyCard({Key? key}) : super(key: key);
+
    
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(40.0),
+      margin: const EdgeInsets.all(40.0),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(18),
       ),

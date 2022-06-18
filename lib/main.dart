@@ -1,5 +1,6 @@
 import 'package:assignment_ui/components/dashboard.dart';
 import 'package:assignment_ui/screens/login.dart';
+import 'package:assignment_ui/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'screens/welcome.dart';
 

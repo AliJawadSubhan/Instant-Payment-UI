@@ -1,10 +1,14 @@
 import 'package:assignment_ui/constant.dart';
-import 'package:assignment_ui/main.dart';
+
 import 'package:assignment_ui/screens/balance.dart';
+
 import 'package:assignment_ui/screens/home.dart';
 import 'package:assignment_ui/screens/offers.dart';
 import 'package:assignment_ui/screens/rewards.dart';
 import 'package:flutter/material.dart';
+
+import '../screens/notifications.dart';
+import '../screens/profile.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -19,7 +23,7 @@ class _DashboardState extends State<Dashboard> {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        backgroundColor: Color(0xff181A20),
+        backgroundColor: const Color(0xff181A20),
         appBar: AppBar(
           toolbarHeight: 100,
           shape: const RoundedRectangleBorder(
@@ -30,13 +34,17 @@ class _DashboardState extends State<Dashboard> {
           ),
           elevation: 0.00,
           backgroundColor: kbackgroundColor,
-          leading: const Padding(
-            padding: EdgeInsets.only(left: 16),
-            child: CircleAvatar(
-              backgroundColor: Color.fromARGB(100, 176, 190, 197),
-              child: CircleAvatar(
-                radius: 17,
-                backgroundImage: kuserpfp,
+          // leading
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 16.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Profile()));
+              },
+              child: const CircleAvatar(
+                // radius: 30.0,
+                child: ClipOval(child: Image(image: kuserpfp)),
               ),
             ),
           ),
@@ -65,18 +73,28 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
           ),
-          actions: const [
+          actions: [
             Padding(
-              padding: EdgeInsets.only(right: 16.0),
+              padding: const EdgeInsets.only(right: 16),
               child: CircleAvatar(
-                backgroundColor: Color.fromARGB(100, 176, 190, 197),
-                child: Icon(
-                  Icons.notifications,
-                  size: 28,
-                  color: Colors.white,
+                radius: 20,
+                backgroundColor: const Color.fromARGB(100, 176, 190, 197),
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Notifications(),
+                      ),
+                    );
+                  },
+                  icon: const Icon(
+                    Icons.notifications,
+                    color: Colors.white,
+                  ),
                 ),
               ),
-            ),
+            )
           ],
           bottom: const TabBar(
             indicatorColor: Color(0xFFB0BEC5),
@@ -84,16 +102,28 @@ class _DashboardState extends State<Dashboard> {
             indicatorPadding: EdgeInsets.all(10),
             tabs: [
               Tab(
-                text: "Home",
+                child: Text(
+                  "Home",
+                  style: TextStyle(fontSize: 14),
+                ),
               ),
               Tab(
-                text: "Balance",
+                child: Text(
+                  "Balance",
+                  style: TextStyle(fontSize: 14),
+                ),
               ),
               Tab(
-                text: "Offer",
+                child: Text(
+                  "Offer",
+                  style: TextStyle(fontSize: 14),
+                ),
               ),
               Tab(
-                text: "Rewards",
+                child: Text(
+                  "Rewards",
+                  style: TextStyle(fontSize: 14),
+                ),
               ),
             ],
           ),
